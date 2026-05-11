@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Admin - Gerenciador de Banners</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .painel { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
+        input, button { display: block; width: 100%; margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { background-color: #2e7d32; color: white; border: none; cursor: pointer; font-weight: bold; font-size: 16px; }
+        button:hover { background-color: #1b5e20; }
+    </style>
+</head>
+<body>
+
+<div class="painel">
+    <h2>Adicionar Novo Banner</h2>
+    
+    <label>Imagem do Banner:</label>
+    <input type="file" id="imagemBanner" accept="image/*">
+    
+    <label>Título / Texto Alternativo:</label>
+    <input type="text" id="tituloBanner" placeholder="Ex: Excelência no conforto do seu lar">
+    
+    <label>Link do Botão (Opcional):</label>
+    <input type="text" id="linkBanner" placeholder="Ex: /contato">
+    
+    <button id="btnSalvar">Salvar no Firebase</button>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-storage.js";
+
+    // SUBSTITUA AS CHAVES ABAIXO PELAS DO SEU PROJETO
+    const firebaseConfig = {
+        apiKey: "AIzaSyBVyaqJZtZcn074_DGkNAiZ2SSq1EzoNx8",
+        authDomain: "pazemcasahomecare.firebaseapp.com",
+        projectId: "pazemcasahomecare",
+        storageBucket: "pazemcasahomecare.firebasestorage.app",
+        messagingSenderId: "209545876266",
+        appId: "1:209545876266:web:95e88bbc922eb4b9fc8453"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+
+    // A lógica de upload automático entrará aqui no próximo passo!
+</script>
+</body>
+</html>

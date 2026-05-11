@@ -47,7 +47,60 @@
     const db = getFirestore(app);
     const storage = getStorage(app);
 
-    // A lógica de upload automático entrará aqui no próximo passo!
+    // Selecionando os campos que você preenche na tela
+    const btnSalvar = document.getElementById("btnSalvar");
+    const inputImagem = document.getElementById("imagemBanner");
+    const inputTitulo = document.getElementById("tituloBanner");
+    const inputLink = document.getElementById("linkBanner");
+
+    // O que acontece quando você clica em "Salvar"
+    btnSalvar.addEventListener("click", async () => {
+        const arquivo = inputImagem.files[0];
+        
+        if (!arquivo) {
+            alert("Por favor, selecione uma imagem do seu computador primeiro!");
+            return;
+        }
+
+        try {
+            // Avisa que está carregando para você não clicar duas vezes
+            btnSalvar.innerText = "Enviando para o Firebase... Aguarde";
+            btnSalvar.disabled = true;
+
+            // 1. Prepara a pasta 'banners' no Storage com o nome do seu arquivo
+            const storageRef = ref(storage, 'banners/' + arquivo.name);
+            
+            // 2. Faz o upload da foto
+            await uploadBytes(storageRef, arquivo);
+            
+            // 3. Pega o link público da foto que acabou de subir
+            const urlImagem = await getDownloadURL(storageRef);
+
+            // 4. Salva as informações de texto e o link no banco de dados (Firestore)
+            await addDoc(collection(db, "banners"), {
+                imagem_url: urlImagem,
+                titulo: inputTitulo.value,
+                link: inputLink.value,
+                ativo: true, // Já entra ativado no seu site
+                ordem: Date.now() // Usa a data para manter uma ordem
+            });
+
+            alert("Sucesso! Banner adicionado ao painel.");
+            
+            // Limpa os campos para você poder adicionar outro
+            inputImagem.value = "";
+            inputTitulo.value = "";
+            inputLink.value = "";
+            
+        } catch (error) {
+            console.error("Erro:", error);
+            alert("Deu um erro! Aperte F12 e olhe a aba Console para ver os detalhes.");
+        } finally {
+            // Volta o botão ao normal
+            btnSalvar.innerText = "Salvar no Firebase";
+            btnSalvar.disabled = false;
+        }
+    });
 </script>
 </body>
 </html>

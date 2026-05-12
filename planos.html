@@ -58,13 +58,12 @@
             font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .plano-nome { font-size: 1.5rem; color: #2c3e50; margin-bottom: 10px; font-weight: 600; }
-        .plano-frequencia { color: #888; font-size: 0.9rem; text-transform: uppercase; font-weight: 600; margin-bottom: 20px; }
-        .plano-preco { font-size: 2rem; color: #6a9c89; font-weight: 700; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .plano-nome { font-size: 1.5rem; color: #2c3e50; margin-bottom: 10px; font-weight: 600; text-align: center; text-transform: uppercase; }
+        .plano-preco { font-size: 1.2rem; color: #6a9c89; font-weight: 700; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; text-align: center; }
         
         .plano-lista { list-style: none; padding: 0; margin: 0 0 30px 0; flex-grow: 1; }
-        .plano-lista li { margin-bottom: 15px; color: #555; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
-        .plano-lista li i { color: #6a9c89; margin-top: 4px; }
+        .plano-lista li { margin-bottom: 15px; color: #555; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; line-height: 1.4; }
+        .plano-lista li i { color: #6a9c89; margin-top: 4px; min-width: 18px; }
 
         .btn-plano {
             display: flex; justify-content: center; align-items: center; gap: 10px;
@@ -109,62 +108,60 @@
         <div class="container">
             <div class="pricing-header">
                 <span class="badge" style="display: inline-block; margin-bottom: 15px;">Modelos de Contratação</span>
-                <h1>Planos de Cuidado Premium</h1>
-                <p>Escolha a modalidade que melhor se adapta à rotina e às necessidades da sua família. Transparência, segurança e o melhor custo-benefício.</p>
+                <h1>Cuidado que acolhe, carinho que transforma.</h1>
+                <p>Planos pensados para promover saúde, segurança e bem-estar com tecnologia, empatia e excelência no cuidado.</p>
             </div>
 
             <div class="pricing-grid">
                 
                 <div class="pricing-card">
-                    <div class="plano-nome">Essencial</div>
-                    <div class="plano-frequencia">Plano Mensal</div>
-                    <div class="plano-preco">Sob Consulta</div>
+                    <div class="plano-nome">Plano Básico</div>
+                    <div class="plano-preco">Valor sob consulta</div>
                     
                     <ul class="plano-lista">
-                        <li><i class="fas fa-check-circle"></i> Visitas semanais da equipe de enfermagem</li>
-                        <li><i class="fas fa-check-circle"></i> Orientação para cuidadores familiares</li>
-                        <li><i class="fas fa-check-circle"></i> Monitoramento vital básico</li>
-                        <li><i class="fas fa-check-circle"></i> Contrato flexível mês a mês</li>
+                        <li><i class="fas fa-stethoscope"></i> Telemedicina 24 horas e atendimento para pacientes de ILP, uma teleconsulta por mês</li>
+                        <li><i class="fas fa-laptop-medical"></i> Sem atendimento médico presencial, somente telemedicina</li>
+                        <li><i class="fas fa-file-prescription"></i> Renovação de receitas</li>
+                        <li><i class="fas fa-users"></i> No máximo 15 usuários</li>
                     </ul>
 
-                    <a href="https://wa.me/554188452588?text=Olá! Gostaria de saber os valores do Plano Essencial (Mensal)." target="_blank" class="btn-plano">
-                        <i class="fab fa-whatsapp"></i> Consultar Valor
+                    <a href="https://wa.me/554188452588?text=Olá! Gostaria de consultar os valores do Plano Básico." target="_blank" class="btn-plano">
+                        <i class="fab fa-whatsapp"></i> Falar com Especialista
                     </a>
                 </div>
 
                 <div class="pricing-card destaque">
-                    <div class="selo-destaque">Mais Escolhido</div>
-                    <div class="plano-nome">Premium Care</div>
-                    <div class="plano-frequencia">Plano Anual (Valor Otimizado)</div>
-                    <div class="plano-preco">Melhor Custo</div>
+                    <div class="selo-destaque">Recomendado</div>
+                    <div class="plano-nome">Plano Intermediário</div>
+                    <div class="plano-preco">Valor sob consulta</div>
                     
                     <ul class="plano-lista">
-                        <li><i class="fas fa-check-circle"></i> <strong>Tudo do plano Essencial</strong></li>
-                        <li><i class="fas fa-check-circle"></i> Avaliação Multidisciplinar (Médico, Nutri, Fisio)</li>
-                        <li><i class="fas fa-check-circle"></i> Check-ups preventivos trimestrais</li>
-                        <li><i class="fas fa-check-circle"></i> Plantão de dúvidas 24 horas</li>
-                        <li><i class="fas fa-check-circle"></i> Valor mensal reduzido por fidelidade</li>
+                        <li><i class="fas fa-stethoscope"></i> Telemedicina 24 horas e atendimento para pacientes de ILP</li>
+                        <li><i class="fas fa-user-md"></i> Atendimento médico presencial uma vez por mês + telemedicina</li>
+                        <li><i class="fas fa-file-prescription"></i> Renovação de receitas</li>
+                        <li><i class="fas fa-users"></i> No máximo 15 usuários</li>
                     </ul>
 
-                    <a href="https://wa.me/554188452588?text=Olá! Gostaria de saber as vantagens e o valor do Plano Premium Care (Anual)." target="_blank" class="btn-plano">
+                    <a href="https://wa.me/554188452588?text=Olá! Gostaria de consultar os valores do Plano Intermediário." target="_blank" class="btn-plano">
                         <i class="fab fa-whatsapp"></i> Falar com Especialista
                     </a>
                 </div>
 
                 <div class="pricing-card">
-                    <div class="plano-nome">Recuperação</div>
-                    <div class="plano-frequencia">Pós-Cirúrgico / Sessões</div>
-                    <div class="plano-preco">Personalizado</div>
+                    <div class="plano-nome">Plano Completo</div>
+                    <div class="plano-preco">Valor sob consulta</div>
                     
                     <ul class="plano-lista">
-                        <li><i class="fas fa-check-circle"></i> Período fechado de dias/semanas</li>
-                        <li><i class="fas fa-check-circle"></i> Fisioterapia intensiva domiciliar</li>
-                        <li><i class="fas fa-check-circle"></i> Tratamento de feridas e curativos complexos</li>
-                        <li><i class="fas fa-check-circle"></i> Foco em alta rápida e segura</li>
+                        <li><i class="fas fa-stethoscope"></i> Telemedicina 24 horas e atendimento para pacientes de ILP, uma teleconsulta por mês</li>
+                        <li><i class="fas fa-user-md"></i> Atendimento médico presencial uma vez por mês + telemedicina</li>
+                        <li><i class="fas fa-file-prescription"></i> Renovação de receitas</li>
+                        <li><i class="fas fa-user-nurse"></i> Telesaúde supervisão enfermagem</li>
+                        <li><i class="fas fa-pills"></i> Telesaúde supervisão farmácia</li>
+                        <li><i class="fas fa-users"></i> 15 a 30 usuários</li>
                     </ul>
 
-                    <a href="https://wa.me/554188452588?text=Olá! Preciso de um orçamento personalizado para um tratamento de Recuperação Pós-Cirúrgica." target="_blank" class="btn-plano">
-                        <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+                    <a href="https://wa.me/554188452588?text=Olá! Gostaria de consultar os valores do Plano Completo." target="_blank" class="btn-plano">
+                        <i class="fab fa-whatsapp"></i> Falar com Especialista
                     </a>
                 </div>
 

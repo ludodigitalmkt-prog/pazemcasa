@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -47,11 +49,19 @@
             </div>
             
             <div class="hero-visual hidden">
-                <div class="image-frame main-img">
-                    <img src="banner-1.png" alt="Atendimento Domiciliar">
-                </div>
-                <div class="image-frame secondary-img">
-                    <img src="banner-2.png" alt="Cuidado e Carinho">
+                <div class="swiper meuCarrossel" style="width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                  <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                      <img src="banner-1.png" alt="Atendimento Domiciliar" style="width: 100%; height: auto; object-fit: cover; display: block;">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                      <img src="banner-2.png" alt="Cuidado e Carinho" style="width: 100%; height: auto; object-fit: cover; display: block;">
+                    </div>
+
+                  </div>
+                  <div class="swiper-pagination"></div>
                 </div>
                 <div class="floating-badge">
                     <i class="fas fa-heartbeat"></i>
@@ -272,23 +282,37 @@
 
     <script>
         function enviarParaWhatsApp(event) {
-            event.preventDefault(); // Impede o recarregamento da página
+            event.preventDefault();
 
-            // Pega os valores preenchidos
             const nome = document.getElementById('nome').value;
             const setor = document.getElementById('setor').value;
             const assunto = document.getElementById('assunto').value;
             const mensagem = document.getElementById('mensagem').value;
 
-            // Formata a mensagem para a URL do WhatsApp
             const textoFormatado = `*Nova Mensagem pelo Site*%0A%0A*Nome:* ${nome}%0A*Setor Desejado:* ${setor}%0A*Assunto:* ${assunto}%0A*Mensagem:* ${mensagem}`;
-            
-            // Cria a URL com o número solicitado
             const urlWhatsApp = `https://wa.me/554188452588?text=${textoFormatado}`;
             
-            // Abre o WhatsApp em uma nova aba
             window.open(urlWhatsApp, '_blank');
         }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.meuCarrossel', {
+                loop: true,
+                autoplay: {
+                    delay: 9000, // Tempo de troca (4 segundos)
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                effect: 'slide', 
+            });
+        });
     </script>
 </body>
 </html>

@@ -38,22 +38,39 @@
             align-items: center;
             margin: 0 auto;
         }
+
+        /* Estilos do Menu de Navegação */
+        .menu-navegacao a {
+            transition: color 0.3s ease;
+        }
+        .menu-navegacao a:hover {
+            color: #2e7d32 !important;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-content">
+    <header style="background-color: #ffffff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;">
+        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            
             <div class="logo-container">
-                <a href="#">
-                    <img src="logo.png" alt="Paz em Casa" class="logo-img">
+                <a href="index.html">
+                    <img src="logo.png" alt="Paz em Casa" class="logo-img" style="height: 60px;">
                 </a>
             </div>
-            <div class="header-infos">
-                <div class="locations">
-                    <span>Atendimento Nacional</span>
+            
+            <nav class="menu-navegacao" style="display: flex; gap: 25px; align-items: center;">
+                <a href="index.html" style="text-decoration: none; color: #2c3e50; font-weight: 600;">Início</a>
+                <a href="#especialidades" style="text-decoration: none; color: #555; font-weight: 500;">Especialidades</a>
+                <a href="planos.html" style="text-decoration: none; color: #6a9c89; font-weight: 700;">Planos e Valores</a>
+                <a href="#contato" style="text-decoration: none; color: #555; font-weight: 500;">Contato</a>
+            </nav>
+
+            <div class="header-infos" style="display: flex; gap: 15px; align-items: center;">
+                <div class="locations" style="background-color: #f4f4f4; padding: 5px 15px; border-radius: 20px;">
+                    <span style="font-size: 14px; font-weight: 500; color: #555;">Atendimento Nacional</span>
                 </div>
-                <a href="https://instagram.com/pazemcasahomecare?igsh=ZHhya2I2MWs3anE0" target="_blank" class="social-icon">
+                <a href="https://instagram.com/pazemcasahomecare?igsh=ZHhya2I2MWs3anE0" target="_blank" class="social-icon" style="color: #2c3e50; font-size: 22px;">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -62,13 +79,13 @@
 
     <section id="banner-institucional" style="padding: 30px 0; background-color: #fcfcfc;">
         <div class="container">
-            <div class="swiper meuCarrossel" style="width: 100%; max-width: 1100px; margin: 0 auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.06);">
+            <div class="swiper meuCarrossel" style="width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); overflow: hidden;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="banner-1.png" alt="Atendimento Domiciliar" style="width: 100%; height: auto; display: block;">
+                        <img src="banner-1.png" alt="Atendimento Domiciliar" style="width: 100%; height: auto; max-height: 600px; object-fit: contain !important; display: block; background-color: #fff;">
                     </div>
                     <div class="swiper-slide">
-                        <img src="banner-2.png" alt="Cuidado e Carinho" style="width: 100%; height: auto; display: block;">
+                        <img src="banner-2.png" alt="Cuidado e Carinho" style="width: 100%; height: auto; max-height: 600px; object-fit: contain !important; display: block; background-color: #fff;">
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -316,7 +333,7 @@
                 loop: true,
                 autoplay: { delay: 10000 },
                 pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, // Adicionado setas de navegação
+                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, 
                 effect: 'slide', 
                 autoHeight: true, 
             });

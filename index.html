@@ -17,21 +17,7 @@
     <script src="script.js" defer></script>
 
     <style>
-        .hero-text, .hero-visual, .section-header, .modern-list-item, 
-        .bento-card, .contato-info, .form-container, .diferencial-wrapper,
-        .hidden, section, #banner-institucional, #texto-institucional {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: none !important;
-            animation: none !important;
-            display: block !important;
-        }
-        
-        .bento-grid, .modern-list, .contato-wrapper, .header-content {
-            display: flex !important;
-        }
-
-        /* Estilo para centralizar o botão na nova seção */
+        /* Centralizar o botão na seção institucional */
         #texto-institucional .btn-cta {
             display: inline-flex;
             justify-content: center;
@@ -43,11 +29,13 @@
         .menu-navegacao a {
             transition: color 0.3s ease;
         }
+
         .menu-navegacao a:hover {
             color: #2e7d32 !important;
         }
     </style>
 </head>
+
 <body>
 
     <header style="background-color: #ffffff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;">
@@ -70,6 +58,7 @@
                 <div class="locations" style="background-color: #f4f4f4; padding: 5px 15px; border-radius: 20px;">
                     <span style="font-size: 14px; font-weight: 500; color: #555;">Atendimento Nacional</span>
                 </div>
+
                 <a href="https://instagram.com/pazemcasahomecare?igsh=ZHhya2I2MWs3anE0" target="_blank" class="social-icon" style="color: #2c3e50; font-size: 22px;">
                     <i class="fab fa-instagram"></i>
                 </a>
@@ -77,34 +66,50 @@
         </div>
     </header>
 
-    <section id="banner-institucional" style="padding: 30px 0; background-color: #fcfcfc;">
-        <div class="container">
-            <div class="swiper meuCarrossel" style="width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); overflow: hidden;">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="banner-1.png" alt="Atendimento Domiciliar" style="width: 100%; height: auto; max-height: 600px; object-fit: contain !important; display: block; background-color: #fff;">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="banner-2.png" alt="Cuidado e Carinho" style="width: 100%; height: auto; max-height: 600px; object-fit: contain !important; display: block; background-color: #fff;">
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next" style="color: #6a9c89;"></div>
-                <div class="swiper-button-prev" style="color: #6a9c89;"></div>
-            </div>
+
+    <section id="banner-institucional" class="banner-full-section">
+        <div class="swiper meuCarrossel banner-swiper">
+           <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+        <img src="banner-1.png" alt="Atendimento domiciliar Paz em Casa">
+    </div>
+
+    <div class="swiper-slide">
+        <img src="banner-2.png" alt="Cuidado profissional no seu lar">
+    </div>
+
+    <div class="swiper-slide">
+        <img src="banner-3.png" alt="Área protegida Paz em Casa">
+    </div>
+
+</div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
+
 
     <section id="texto-institucional" style="padding: 40px 0 60px 0; text-align: center; background-color: #fcfcfc;">
         <div class="container" style="max-width: 800px; margin: 0 auto;">
             <span class="badge" style="display: inline-block; margin-bottom: 20px;">Atendimento Domiciliar</span>
-            <h1 style="margin-bottom: 20px; font-size: 2.5rem; color: #2c3e50;">Excelência hospitalar no conforto do seu lar.</h1>
-            <p style="margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6; color: #555;">Unimos a proteção, o carinho e a técnica avançada para cuidar de quem você ama, devolvendo a tranquilidade e a segurança para a rotina familiar.</p>
+
+            <h1 style="margin-bottom: 20px; font-size: 2.5rem; color: #2c3e50;">
+                Excelência hospitalar no conforto do seu lar.
+            </h1>
+
+            <p style="margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6; color: #555;">
+                Unimos a proteção, o carinho e a técnica avançada para cuidar de quem você ama, devolvendo a tranquilidade e a segurança para a rotina familiar.
+            </p>
+
             <a href="https://wa.me/554188452588?text=Olá! Gostaria de mais informações sobre o atendimento domiciliar." class="btn-cta" target="_blank">
                 Fale com um Especialista <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
             </a>
         </div>
     </section>
+
 
     <section id="especialidades" class="bg-beige">
         <div class="container">
@@ -114,6 +119,7 @@
             </div>
 
             <div class="modern-list">
+
                 <div class="modern-list-item">
                     <div class="item-icon"><i class="fas fa-procedures"></i></div>
                     <div class="item-content">
@@ -145,9 +151,11 @@
                         <p>Para quadros de alta complexidade. Nosso foco é a dignidade e o alívio do sofrimento, oferecendo controle rigoroso da dor e suporte emocional para a família.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
 
     <section id="terapias">
         <div class="container">
@@ -157,6 +165,7 @@
             </div>
 
             <div class="bento-grid">
+
                 <div class="bento-card span-2 bg-white">
                     <div class="bento-header">
                         <i class="fas fa-apple-alt"></i>
@@ -196,12 +205,15 @@
                     </div>
                     <p>Focada na adaptação do ambiente e retomada da autonomia diária. Orientamos a família sobre como adaptar a casa para evitar quedas e acidentes.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
+
     <section id="contato" class="bg-beige">
         <div class="container contato-wrapper">
+
             <div class="contato-info">
                 <div class="section-header" style="margin-bottom: 30px;">
                     <h2>Canais de Atendimento</h2>
@@ -209,6 +221,7 @@
                 </div>
                 
                 <div class="email-list">
+
                     <div class="email-item">
                         <i class="fas fa-envelope"></i>
                         <div>
@@ -216,6 +229,7 @@
                             <span>brunomassinhan@pazemcasa.com.br</span>
                         </div>
                     </div>
+
                     <div class="email-item">
                         <i class="fas fa-briefcase"></i>
                         <div>
@@ -223,6 +237,7 @@
                             <span>diretoriacomercial@pazemcasa.com.br</span>
                         </div>
                     </div>
+
                     <div class="email-item">
                         <i class="fas fa-cogs"></i>
                         <div>
@@ -230,6 +245,7 @@
                             <span>diretoriaoperacional@pazemcasa.com.br</span>
                         </div>
                     </div>
+
                     <div class="email-item">
                         <i class="fas fa-stethoscope"></i>
                         <div>
@@ -237,6 +253,7 @@
                             <span>diretoriaassistencial@pazemcasa.com.br</span>
                         </div>
                     </div>
+
                     <div class="email-item">
                         <i class="fas fa-star"></i>
                         <div>
@@ -244,15 +261,19 @@
                             <span>maximo@pazemcasa.com.br</span>
                         </div>
                     </div>
+
                 </div>
             </div>
 
+
             <div class="form-container">
                 <form id="whatsappForm" onsubmit="enviarParaWhatsApp(event)">
+
                     <div class="form-group">
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" placeholder="Ex: João Silva" required>
                     </div>
+
                     <div class="form-group">
                         <label for="setor">Para qual setor deseja enviar?</label>
                         <select id="setor" required>
@@ -264,80 +285,95 @@
                             <option value="Diretoria Assistencial">Diretoria Assistencial</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="assunto">Assunto</label>
                         <input type="text" id="assunto" placeholder="Ex: Orçamento de Home Care" required>
                     </div>
+
                     <div class="form-group">
                         <label for="mensagem">Sua Mensagem</label>
                         <textarea id="mensagem" rows="5" placeholder="Descreva sua necessidade..." required></textarea>
                     </div>
+
                     <button type="submit" class="btn-cta" style="border:none; cursor:pointer; width:100%; justify-content:center;">
                         Enviar via WhatsApp <i class="fab fa-whatsapp"></i>
                     </button>
+
                 </form>
             </div>
+
         </div>
     </section>
+
 
     <section id="diferencial" class="bg-white">
         <div class="container diferencial-wrapper">
             <div class="quote-box">
                 <h2>Um cuidado único, integrado e eficiente.</h2>
+
                 <p>"Nossos especialistas dialogam entre si. O nutricionista conversa com o médico, que alinha com o fisioterapeuta. O mesmo rigor do hospital, com o calor da sua casa."</p>
                 
                 <div class="cta-bottom">
                     <a href="https://wa.me/554188452588?text=Olá! Gostaria de agendar um atendimento." class="btn-cta" target="_blank">
                         Agendar Atendimento <i class="fab fa-whatsapp"></i>
                     </a>
+
                     <span class="phone-number">(41) 8845-2588</span>
                 </div>
             </div>
         </div>
     </section>
 
+
     <footer>
         <div class="container footer-content">
             <img src="logo.png" alt="Paz em Casa" style="height: 60px; margin-bottom: 20px;">
+
             <p>Atendimento Nacional.</p>
             
             <div class="footer-social">
-                <a href="https://instagram.com/pazemcasahomecare?igsh=ZHhya2I2MWs3anE0" target="_blank"><i class="fab fa-instagram"></i> Siga nosso Instagram</a>
+                <a href="https://instagram.com/pazemcasahomecare?igsh=ZHhya2I2MWs3anE0" target="_blank">
+                    <i class="fab fa-instagram"></i> Siga nosso Instagram
+                </a>
             </div>
 
             <p class="copyright">&copy; 2026 Paz em Casa. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+
     <a href="https://wa.me/554188452588?text=Olá Paz em Casa! Vim pelo site e gostaria de tirar uma dúvida." id="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script>
-        function enviarParaWhatsApp(event) {
-            event.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const setor = document.getElementById('setor').value;
-            const assunto = document.getElementById('assunto').value;
-            const mensagem = document.getElementById('mensagem').value;
-            const textoFormatado = `*Nova Mensagem pelo Site*%0A%0A*Nome:* ${nome}%0A*Setor Desejado:* ${setor}%0A*Assunto:* ${assunto}%0A*Mensagem:* ${mensagem}`;
-            const urlWhatsApp = `https://wa.me/554188452588?text=${textoFormatado}`;
-            window.open(urlWhatsApp, '_blank');
-        }
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const swiper = new Swiper('.meuCarrossel', {
                 loop: true,
-                autoplay: { delay: 10000 },
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, 
-                effect: 'slide', 
-                autoHeight: true, 
+                speed: 900,
+                autoplay: { 
+                    delay: 7000,
+                    disableOnInteraction: false
+                },
+                pagination: { 
+                    el: '.swiper-pagination', 
+                    clickable: true 
+                },
+                navigation: { 
+                    nextEl: '.swiper-button-next', 
+                    prevEl: '.swiper-button-prev' 
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                }
             });
         });
     </script>
+
 </body>
 </html>

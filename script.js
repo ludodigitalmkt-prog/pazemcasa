@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- Configurações do Observer de Animação ---
     const observerOptions = {
         threshold: 0.15,
@@ -11,60 +11,67 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.classList.add('show');
-                }, index * 100); 
+                }, index * 100);
+
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
+    // --- Elementos que vão aparecer suavemente ao rolar a página ---
+    const animatedElements = document.querySelectorAll(
+        'section, .modern-list-item, .bento-card, .email-item, .form-container, .diferencial-wrapper'
+    );
+
+    animatedElements.forEach((el) => {
+        el.classList.add('fade-scroll');
+        observer.observe(el);
+    });
+
 
     // --- Controle do Botão Flutuante de WhatsApp ---
     const whatsappBtn = document.getElementById('whatsapp-float');
-    
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        if (scrollPosition > 300) {
-            whatsappBtn.classList.add('visible');
-        } else {
-            whatsappBtn.classList.remove('visible');
-        }
-    });
 
-    // --- Lógica do Formulário de E-mail para WhatsApp ---
-    const emailForm = document.getElementById('emailForm');
-    
-    if(emailForm) {
-        emailForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Captura dos campos
-            const nome = document.getElementById('nome').value;
-            const setorEmail = document.getElementById('setor').value;
-            const assunto = document.getElementById('assunto').value;
-            const mensagem = document.getElementById('mensagem').value;
-            
-            // Número oficial atualizado: (47) 9143-9129
-            const numeroWhatsApp = "554791439129";
-            
-            // Montagem da mensagem estruturada
-            const mensagemFormatada = `*Nova Solicitação de Atendimento*\n\n` +
-                                     `*Para:* ${setorEmail}\n` +
-                                     `*De:* ${nome}\n` +
-                                     `*Assunto:* ${assunto}\n\n` +
-                                     `*Mensagem:* \n${mensagem}`;
-            
-            // Codificação para URL
-            const textoEncoded = encodeURIComponent(mensagemFormatada);
-            
-            // Redirecionamento para o WhatsApp
-            const urlFinal = `https://wa.me/${numeroWhatsApp}?text=${textoEncoded}`;
-            
-            window.open(urlFinal, '_blank');
-            
-            // Opcional: Limpar formulário após envio
-            emailForm.reset();
+    if (whatsappBtn) {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 300) {
+                whatsappBtn.classList.add('visible');
+            } else {
+                whatsappBtn.classList.remove('visible');
+            }
         });
     }
+
 });
+
+
+// --- Função do formulário para enviar mensagem ao WhatsApp ---
+function enviarParaWhatsApp(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome')?.value || '';
+    const setor = document.getElementById('setor')?.value || '';
+    const assunto = document.getElementById('assunto')?.value || '';
+    const mensagem = document.getElementById('mensagem')?.value || '';
+
+    const numeroWhatsApp = "554188452588";
+
+    const textoFormatado =
+        `*Nova Mensagem pelo Site*%0A%0A` +
+        `*Nome:* ${nome}%0A` +
+        `*Setor Desejado:* ${setor}%0A` +
+        `*Assunto:* ${assunto}%0A` +
+        `*Mensagem:* ${mensagem}`;
+
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${textoFormatado}`;
+
+    window.open(urlWhatsApp, '_blank');
+
+    const form = document.getElementById('whatsappForm');
+
+    if (form) {
+        form.reset();
+    }
+}
